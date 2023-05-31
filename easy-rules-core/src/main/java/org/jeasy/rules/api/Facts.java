@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- *  Copyright (c) 2021, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
+ *  Copyright (c) 2020, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
  */
 package org.jeasy.rules.api;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -36,7 +37,7 @@ import java.util.Set;
  *
  * @author Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
  */
-public class Facts implements Iterable<Fact<?>> {
+public class Facts implements Iterable<Fact<?>>, Serializable {
 
     private final Set<Fact<?>> facts = new HashSet<>();
 
@@ -48,7 +49,7 @@ public class Facts implements Iterable<Fact<?>> {
      */
     public <T> void put(String name, T value) {
         Objects.requireNonNull(name, "fact name must not be null");
-        Objects.requireNonNull(value, "fact value must not be null");
+//        Objects.requireNonNull(value, "fact value must not be null");
         Fact<?> retrievedFact = getFact(name);
         if (retrievedFact != null) {
             remove(retrievedFact);

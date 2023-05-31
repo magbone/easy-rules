@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- *  Copyright (c) 2021, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
+ *  Copyright (c) 2020, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -25,6 +25,7 @@ package org.jeasy.rules.api;
 
 import org.jeasy.rules.core.RuleProxy;
 
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.Objects;
@@ -41,7 +42,7 @@ import java.util.TreeSet;
  *
  * @author Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
  */
-public class Rules implements Iterable<Rule> {
+public class Rules implements Iterable<Rule>, Serializable {
 
     private Set<Rule> rules = new TreeSet<>();
 
