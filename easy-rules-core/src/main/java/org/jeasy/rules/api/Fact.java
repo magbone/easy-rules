@@ -1,7 +1,7 @@
 /*
  * The MIT License
  *
- *  Copyright (c) 2021, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
+ *  Copyright (c) 2020, Mahmoud Ben Hassine (mahmoud.benhassine@icloud.com)
  *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -23,6 +23,7 @@
  */
 package org.jeasy.rules.api;
 
+import java.io.Serializable;
 import java.util.Objects;
 
 /**
@@ -32,7 +33,7 @@ import java.util.Objects;
  * @param <T> type of the fact
  * @author Mahmoud Ben Hassine
  */
-public class Fact<T> {
+public class Fact<T> implements Serializable {
 	
 	private final String name;
 	private final T value;
@@ -44,7 +45,7 @@ public class Fact<T> {
 	 */
 	public Fact(String name, T value) {
 		Objects.requireNonNull(name, "name must not be null");
-		Objects.requireNonNull(value, "value must not be null");
+//		Objects.requireNonNull(value, "value must not be null");
 		this.name = name;
 		this.value = value;
 	}
